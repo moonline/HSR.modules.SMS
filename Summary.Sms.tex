@@ -282,6 +282,96 @@ Ereignisgesteuerte Prozesse:
 	\li asynchron
 \ulE
 
+\se{Repetition}
+\ul
+	\li Die meissten Ereignisse sind Eventgesteuert
+	\li Ereignis kann andere Ereignisse auslösen
+	\li EDA: Ereignisverarbeitungszyklus
+	\li Clustern nach Muster von Ereignisströmen: z.B. erkennen von Fehlermuster \ra erkennen der Fehlerqueller
+	\li Mediator: lose Kopplung zwischen Ereignisquelle und Senke \ra Ereignis muss gar nicht wissen, wo es hin muss \img{img/v2.5.jpg}{}{0.5}{}
+	\li Neues Ereignis kann durch Mediator ausgelöst werden
+	\li Ereignisgesteuerte System basieren meisst auf asynchroner Kommunikation
+	\li Aus einer Asynchronen Kommunikation kann immer eine Synchrone gemacht werden
+	\li Asyncrhone Kommunikationskomponenten: unabhängig, durch Kommunikationsprotokoll verbunden
+	\li Unterschied zwischen Deadlock und Livelock: Bei Livelock lebt das Objekt und (re)agiert, kommt aber aus einer Schleife nicht mehr raus, Bei Deadlock wartet das Objekt unendlich
+\ulE
+
+
+\sse{Observer Pattern}
+\img{img/v3.1.jpg}{}{0.75}{}
+\ul
+	\li Observer Pattern: Public/Subscribe Interaction. Empfangende Komponenten melden sich bei Sender/Sendeverteiler an
+\ulE
+
+\sse{Complex Event Processing}
+\definition{CEP}{Complex Event Processing}
+CEP:
+\ul
+	\li gleichzeitige, dynamische Verarbeitung von Ereignissen
+	\li Berücksichtigt Beziehungen zwischen Ereignissen
+\ulE
+
+\definition{ESP}{Event Stream Processing}
+ESP: Verarbeitung kontinuierlicher Ereignisströme
+\img{img/v3.2.jpg}{ESP: Anhand von Regeln wird aufgrund des Ereignisstreams gehandelt}{0.75}{}
+
+\examp{Ereignisbehandlung}{In den USA tobt ein Sturm, mehrere grosse Weizenunternehmen fusionieren und in Europa ein Krieg ausbricht \ra Weizenaktien kaufen, weil der Preis steigen wird}
+\definition{Echtzeitfähigkeit}{Die Antwort kommt in einer vordefinierten Zeit oder zu einem definierten Zeitpunkt \ra wenn früher oder später die Antwort kommt: Falschzeit}
+
+\img{img/v3.3.jpg}{Ereignisverarbeitung}{0.75}{}
+
+\ul
+	\li (+) genaue Abbildung eines Dynamischen Systems
+	\li (+) starke entkopplung der Komponenten
+	\li (+) Hohe Agilität
+	\li (--) Redundanz \ra Inkonsistenz, Wartbarkeitsprobleme
+	\li (--) Lokalisierung und Behebung von Fehlern \ra Zeit ist ein weiterer Freiheitsgrad == Fehlerquelle
+	\li (--) Strukturiertes Testen von EDA ist schwierig
+	\li (--) Schwereres Verständnis des Gesammtsystems
+	\li (--) Häufige Änderung der Komponenten
+	\li (--) Nachfolgen des Ereignisflusses schwierig
+\ulE
+
+\expl{Diskrete Zustandsänderung}{Gibt es nicht. Jede Zustandsänderung benötigt Zeit. Es ist nur eine Frage der Granularität.}
+\examp{Beispiele für diskrete/kontinuierliche Wahrnehmung von Zustandübergängen}{Diskret: Airbag, Kontinuierlich: Crashtest}
+\expl{Zeitkontinuierlichkeit}{Die reale Welt ist zeitkontinuierlich}
+
+\se{Simulation und Zeit}
+\ul
+	\li Zwei Uhren: Reale Zeit, Modellzeit innerhalb des Systems
+	\li Modellzeit wird durch Modelluhr formuliert \ra Simulationsuhr
+	\li Simulationsuhr ist nicht kontinuierlich, sondern springt von Ereigniszeitpunkt zu Ereigniszeitpunkt
+	\img{img/v3.4.jpg}{Modellzeit}{0.75}{}
+	\li Treten zwei Ereignisse gleichzeitig ein, so werden die dazu gehörenden
+Ereignis-routinen bzgl. der Simulationsuhr
+		\ul
+			\li gleichzeitig bearbeitet, wenn sie unterschiedliche/keine Ressourcen benutzen
+			\li	sequenziell bearbeitet, wenn sie die gleiche Ressource benötigen
+		\ulE
+	\li Gleichzeitige Ereignisse werden sequentiell berechnet, die Modellzeit läuft währen dieser Zeit jedoch nicht und in der Simulation finden die Ereignisse somit gleichzeitig statt
+	\li \expl{Gleichzeitige Ereignisse}{können sich nicht gegenseitig beeinflussen, gleichzeitige Prozesse jedoch schon.}
+	\li Einzelne Ereignisse müssen nicht in der Reihenfolge erzeugt werden, in der sie abgearbeitet werden
+\ulE
+
+\img{img/v3.5.jpg}{Ereignisse und Ereignisroutinen}{0.75}{}
+
+\se{Prozesse}
+\img{img/v3.6.jpg}{Prozesse laufen zwischen zwei Ereignissen}{0.5}{}
+\img{img/v3.7.jpg}{Unabhängige Prozesse}{0.5}{}
+\img{img/v3.8.jpg}{Dualitätsprinzip}{0.5}{}
+\ul
+	\li Bei der Parallelisierung von Simulationsprozessen kann es Abhängigkeitsprobleme geben
+	\li Lösungen: 
+		\ul
+			\li Zentrale Kontroll/Barriereinstanz
+			\li Anschliessende Kontrolle mit Backtracking
+		\ulE
+\ulE
+
+
+
+
+
 
 
 
