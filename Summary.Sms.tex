@@ -282,7 +282,7 @@ Ereignisgesteuerte Prozesse:
 	\li asynchron
 \ulE
 
-\se{Repetition}
+\sse{Repetition}
 \ul
 	\li Die meissten Ereignisse sind Eventgesteuert
 	\li Ereignis kann andere Ereignisse auslösen
@@ -297,13 +297,13 @@ Ereignisgesteuerte Prozesse:
 \ulE
 
 
-\sse{Observer Pattern}
+\se{Observer Pattern}
 \img{img/v3.1.jpg}{}{0.75}{}
 \ul
 	\li Observer Pattern: Public/Subscribe Interaction. Empfangende Komponenten melden sich bei Sender/Sendeverteiler an
 \ulE
 
-\sse{Complex Event Processing}
+\se{Complex Event Processing}
 \definition{CEP}{Complex Event Processing}
 CEP:
 \ul
@@ -368,22 +368,68 @@ Ereignis-routinen bzgl. der Simulationsuhr
 		\ulE
 \ulE
 
+\se{Repetition}
+\ul
+	\li Wann bietet sich ein Eventgetriebenes Modell an? 
+		\ul 
+			\li Wenn das Interesse am Zustandswechsel und nicht am Übergang liegt. 
+		\ulE
+	\li Was ist der Unterschied zwischen Rechenzeit / Realer Zeit / Modelzeit / Simulationszeit
+		\ul 
+			\li Der Simulationsfortschritt läuft anhand der Simulationsuhr
+			\li Im Eventgetriebenen Modell springt die Zeit von Event zu Event
+			\li Parallelität bezieht sich immer auf die Modellzeit und nicht die Rechenzeit
+		\ulE
+	\li Parallele Prozesse können sich gegenseitig Beeinflussen. Methoden zum Feststellen von Beeinflussungen:
+		\ul
+			\li Optimistisches Verfahren: Annahme, dass es geht. Im Fehlerfall: Backtracking
+			\li Pessimistisches Verfahren: Zentrale Kontroll/Barriereinstanz
+		\ulE
+\ulE
 
 
+\ch{Modellierung von zeitlichem Verhalten mit Warteschlangen}
+\img{img/v4.1.jpg}{}{0.75}{}
+\img{img/v4.2.jpg}{}{0.75}{}
 
+\ul
+	\li Erinnerungsfreier Zufallsprozess: Was bereits passiert ist, hat keinen Einfluss auf aktuelle Ereignisse \ra Ereignisse werden unabhängig erzeugt
+	\li M/M/1/$\infty$/$\infty$/fifo:
+		\ul
+			\li M:
+			\li M:
+			\li 1:
+			\li $\infty$:
+			\li $\infty$:
+			\li fifo: 
+		\ulE
+\ulE
 
+\sse{Simple Queue}
+\ul
+	\li \#Token werden durch Zeit geteilt \ra Arrival Rate Lamda
+	\li Was hinten rausgeht: Durchsatz x
+	\li System ist stabil, wenn Lamda=X
+	\li Utilisation kann sich nur zwischen 0\% und 100\% bewegen
+\ulE
+\img{img/v4.3.jpg}{Simple Queue M/M/1 II}{1}{}
+\img{img/v4.4.jpg}{Simple Queue M/M/1 III}{1}{}
+\img{img/v4.5.jpg}{Läuft die Utilisation gegen 100\%, so läuft die Residenzzeit (Delay) gegen Unendlich. $R/S = \frac{1}{1-u}$}{0.75}{}
 
+\ul
+	\li Utilisation kann sich linear verhalten. 
+	\li Die Residenzzeit erhöht sich jedoch nicht linear.
+\ulE
+\img{img/v4.6.jpg}{Twin Center: Parallelschaltung von 2 M/M/1 Queues. (Fehler in der Rechnung: Q=X*R statt XR}{1}{}
+\img{img/v4.7.jpg}{Dual Server M/M/2 I}{1}{}
+\exam{Aufgabe, bei der eine Näherung überprüft werden muss}
+\expl{Auslastung}{Der Dual Server ist besser ausgelastet, weil bei einer vollen Warteschlange immer beide Prozesse ausgelastet sind. Beim Twin Center könnte ein Prozess nicht ausgelastet sein, obwohl Eregnisse anstehen.}
 
+\img{img/v4.8.jpg}{Multi Single Server Queue M/M/n}{1}{}
 
+\img{img/v4.9.jpg}{Feedback Center}{1}{}
 
-
-
-
-
-
-
-
-
+\img{img/v4.10.jpg}{Closed Queueing Center: Keine Unbegrenzte Anzahl Tokens, Nur eine begrenzte Lebenszeit im System}{1}{}
 
 
 
