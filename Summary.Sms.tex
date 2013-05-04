@@ -405,73 +405,97 @@ Ereignis-routinen bzgl. der Simulationsuhr
 		\ulE
 \ulE
 
-\sse{Simple Queue}
-\ul
-	\li \#Token werden durch Zeit geteilt \ra Arrival Rate Lamda
-	\li Was hinten rausgeht: Durchsatz x
-	\li System ist stabil, wenn Lamda=X
-	\li Utilisation kann sich nur zwischen 0\% und 100\% bewegen
-\ulE
-\img{img/v4.3.jpg}{Simple Queue M/M/1 II}{1}{}
-\img{img/v4.4.jpg}{Simple Queue M/M/1 III}{1}{}
-\img{img/v4.5.jpg}{Läuft die Utilisation gegen 100\%, so läuft die Residenzzeit (Delay) gegen Unendlich. $R/S = \frac{1}{1-u}$}{0.75}{}
+		\sse{Simple Queue}
+			\ul
+				\li \#Token werden durch Zeit geteilt \ra Arrival Rate Lamda
+				\li Was hinten rausgeht: Durchsatz x
+				\li System ist stabil, wenn Lamda=X
+				\li Utilisation kann sich nur zwischen 0\% und 100\% bewegen
+			\ulE
+			\img{img/v4.3.jpg}{Simple Queue M/M/1 II}{1}{}
+			\img{img/v4.4.jpg}{Simple Queue M/M/1 III}{1}{}
+			\img{img/v4.5.jpg}{Läuft die Utilisation gegen 100\%, so läuft die Residenzzeit (Delay) gegen Unendlich. $R/S = \frac{1}{1-u}$}{0.75}{}
 
-\ul
-	\li Utilisation kann sich linear verhalten. 
-	\li Die Residenzzeit erhöht sich jedoch nicht linear.
-\ulE
-\img{img/v4.6.jpg}{Twin Center: Parallelschaltung von 2 M/M/1 Queues. (Fehler in der Rechnung: Q=X*R statt XR}{1}{}
-\img{img/v4.7.jpg}{Dual Server M/M/2 I}{1}{}
-\exam{Aufgabe, bei der eine Näherung überprüft werden muss}
-\expl{Auslastung}{Der Dual Server ist besser ausgelastet, weil bei einer vollen Warteschlange immer beide Prozesse ausgelastet sind. Beim Twin Center könnte ein Prozess nicht ausgelastet sein, obwohl Eregnisse anstehen.}
+			\ul
+				\li Utilisation kann sich linear verhalten. 
+				\li Die Residenzzeit erhöht sich jedoch nicht linear.
+			\ulE
+			\img{img/v4.6.jpg}{Twin Center: Parallelschaltung von 2 M/M/1 Queues. (Fehler in der Rechnung: Q=X*R statt XR}{1}{}
+			\img{img/v4.7.jpg}{Dual Server M/M/2 I}{1}{}
+			\exam{Aufgabe, bei der eine Näherung überprüft werden muss}
+			\expl{Auslastung}{Der Dual Server ist besser ausgelastet, weil bei einer vollen Warteschlange immer beide Prozesse ausgelastet sind. Beim Twin Center könnte ein Prozess nicht ausgelastet sein, obwohl Eregnisse anstehen.}
 
-\img{img/v4.8.jpg}{Multi Single Server Queue M/M/n}{1}{}
-\img{img/v4.9.jpg}{Feedback Center}{1}{}
+			\img{img/v4.8.jpg}{Multi Single Server Queue M/M/n}{1}{}
+			\img{img/v4.9.jpg}{Feedback Center}{1}{}
 
-\img{img/v4.10.jpg}{Closed Queueing Center: Keine Unbegrenzte Anzahl Tokens, Nur eine begrenzte Lebenszeit im System}{1}{}
+			\img{img/v4.10.jpg}{Closed Queueing Center: Keine Unbegrenzte Anzahl Tokens, Nur eine begrenzte Lebenszeit im System}{1}{}
 
 
 \ch{SysML}
-Systemarchitektur grenzt den Systemkonzept ab.s
-\img{img/v5.1.jpg}{Architekturdesign}{0.5}{}{}
-\img{img/v5.2.jpg}{Anforderungs-Formulierungsschablsone}{0.75}{}
-\img{img/v5.3.jpg}{Systemengineering: Schema}{0.75}{}
+	Systemarchitektur grenzt den Systemkonzept ab.s
+	\img{img/v5.1.jpg}{Architekturdesign}{0.5}{}{}
+	\img{img/v5.2.jpg}{Anforderungs-Formulierungsschablsone}{0.75}{}
+	\img{img/v5.3.jpg}{Systemengineering: Schema}{0.75}{}
 
 
 
 \ch{Ursache-Wirkungsdiagramme}
-\exam{Kann ein Token ein anderes überholen bei einem einfachen Delay? (welche unterschiedlichen Arten von Delays gibt es?) Nur wenn keine Resource beteiligt ist. Wenn eine Resource beteiligt ist, ergibt sich eine Warteschlange.}
-\sse{Arten von Wirkungsbeziehungen}
-\uli{
-	\li direkt (unmittelbar)
-	\li in festen Zeitintervallen
-	\li Ereignisbedingt
-}
+	\exam{Kann ein Token ein anderes überholen bei einem einfachen Delay? (welche unterschiedlichen Arten von Delays gibt es?) Nur wenn keine Resource beteiligt ist. Wenn eine Resource beteiligt ist, ergibt sich eine Warteschlange.}
+	\sse{Arten von Wirkungsbeziehungen}
+		\uli{
+			\li direkt (unmittelbar)
+			\li in festen Zeitintervallen
+			\li Ereignisbedingt
+		}
 
 
 \ch{Input Datenanalyse}
-\definition{Zufallsvariable}{Abbildungsfunktion, ordnet den Elementen einer Ergebnismenge reelle Zahlen zu}
-\definition{Verteilungsdichtefunktion}{Wahrscheinlichkeit des Auftretens von Zufallswerten}
-\stdImg{v8.1}{Verteilungsfunktionen}
-\stdImg{v8.2}{Verteilungs und Summenfunktion}
-\stdImg{v8.3}{Verteilungs- vs Dichtefunktion}
-Eigenschaften eines dynamischen Simulationexperiments:
-\uli{
-	\li Ereigniserzeugung/Zerstörung zu zufälligen Zeiten
-	\li Bearbeitungszeiten schwanken stochastisch
-	\li Event-Flow Entscheidungen sind zufällig
-	\li Resourcen, Mengenangaben, Füllmengen, ... schwanken 	
-}
+	\se{Grundlegendes}
+		\definition{Zufallsvariable}{Abbildungsfunktion, ordnet den Elementen einer Ergebnismenge reelle Zahlen zu}
+		\definition{Verteilungsdichtefunktion}{Wahrscheinlichkeit des Auftretens von Zufallswerten}
+		\stdImg{v8.1}{Verteilungsfunktionen}
+		\stdImg{v8.2}{Verteilungs und Summenfunktion}
+		\stdImg{v8.3}{Verteilungs- vs Dichtefunktion}
+		Eigenschaften eines dynamischen Simulationexperiments:
+		\uli{
+			\li Ereigniserzeugung/Zerstörung zu zufälligen Zeiten
+			\li Bearbeitungszeiten schwanken stochastisch
+			\li Event-Flow Entscheidungen sind zufällig
+			\li Resourcen, Mengenangaben, Füllmengen, ... schwanken 	
+		}
 
-\stdImg{v8.4}{Discrete Density Functions}
-\stdImg{v8.5}{Continious Density Functions}
-\stdImg{v8.6}{Continious Density Functions}
-\stdImg{v8.7}{Continious Density Functions}
+		\stdImg{v8.4}{Discrete Density Functions}
+		\stdImg{v8.5}{Continious Density Functions}
+		\stdImg{v8.6}{Continious Density Functions}
+		\stdImg{v8.7}{Continious Density Functions}
 
+	\se{Wichtige diskrete Verteilungen}
+		\sse{Binominal Verteilung}
+			\img{img/v10.1.jpg}{}{0.25}{}
 
-
-
-
+	\se{Repetition}
+		\uli{
+			\li Was ist eine Zufallsvariable? \\
+			Abbildungsfunktion, ordnet den Elementen einer Ergebnismenge reelle Zahlen zu
+			\li Geben sie Beispiele für stetige und diskrete Zufallsvariablen an!\\
+			stetig: stufenlos, z.B. Temperatur, diskret: gestuft, z.B. Würfel
+			\li Welcher Unterschied besteht zwischen Verteilungsdichte und Verteilungsfunktion\\
+			Vert. Dichte ist aufkummulierte Verteilungsfunktion
+			\li Was versteht man bei pseudo Zufallszahlen unter der seed?\\
+			Ausgangswert für Funktion
+			\li Was versteht man bei Zufallszahlen unter Sequenzlänge und was bedeutet das für die
+			Simulation?\\
+			Bereich der Zufallszahlen, in dem Werte generiert werden
+			\li Wie können sie mit einer gleichverteilten Zufallsvariablen Zufallszahlen anderer
+			Verteilungen erzeugen? \\
+			Umkehrfunktion
+			\li Warum werden in der Simulation Pseudo-Zufallszahlen unterschiedlicher Verteilungen
+			benötigt?\\
+			Für unterschiedliche Anwendungsfälle braucht es unterschiedliche Ansätze
+			\li Hat die Auswahl der Verteilungsfunktion einen grossen Einfluss auf das Resultat der
+			Simulation? Geben sie ein einleuchtendes Beispiel an.\\
+			Z.B: verwendung von Normalverteilung für Radioaktiven Zerfall führt zu komplett falschen Ergebnissen
+		}
 
 
 
