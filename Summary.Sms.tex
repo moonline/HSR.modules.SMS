@@ -517,9 +517,28 @@ Ereignis-routinen bzgl. der Simulationsuhr
 		}
 		\expl{Stichprobenmessungen}{Bei unendlich vielen Stickprobenmessungen, wird die Varianz zwischen Stichproben und effektiven Mittelwert theoretisch null.}
 
+	\exam{Wann gibt es keine Restfehlerwahrscheinlichkeit? Wenn ich die ganze Grundmenge untersucht habe.}
+	\exam{Was machen wir mit dem empirischen Datenmaterial? Wir bauen daraus eine Verteilfunktion.\\ Warum? Weil wir mit der FUnktion beliebig viele Daten generieren können und damit beliebig viele Simulationen durchführen können.}
+	
+	\uli{
+		\li x-string: Mittelwert der Stickprobe
+		\li mü: Mittelwert gesammt
+	}
 
-
-
+	\exam{Wie kann ich den Fehler minimieren? Testgrösse n erhöhen. x-string nähert sich mü an. \ra\ Streuung wird kleiner. Damit wird das Risiko einer Fehlschätzun kleiner. }
+	
+	\examp{Eine Einkommens- Verbrauchsstichprobe hat für 250 Haushalte eines bestimmten Typs ergeben, dass pro Jahr im Mittel 2500,00 Euro im Mittel für Urlaub ausgegeben werden. Die Standardabweichung war 400 Euro.\\
+		\uli{
+			\li Berechnen Sie ein 99\% Vertrauensintervall für die gesamten Urlaubsausgaben dieses Haushaltstyps.
+			\li Angenommen dieser Haushaltstyp repräsentiert 2 Millionen Haushalte. Was ist dann das Vertrauensintervall für die Ausgaben?
+		}
+		Tabelle \ra\ 0.99 \ra\ 2.58\\
+		Formel: $mü-z(sigma/sqrt(n)) <= \bar{x} <= mü+z(sigma/sqrt(n))$\\
+		Lösung: $2'500-2.58*(400/sqrt(250)) >= \bar{x} >= 2'500+2.58*(400/sqrt(250))$\\
+		$2434.73 <= \bar{x} <= 2565.27$\\
+		Hochrechnung:\\
+		2Mio: $2434.73*2'000'000, 2565.27*2'000'000 = 4870'000'000 <= \bar{x} <= 5130'000'000$
+	}
 
 
 \end{document}
