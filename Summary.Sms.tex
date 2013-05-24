@@ -541,4 +541,104 @@ Ereignis-routinen bzgl. der Simulationsuhr
 	}
 
 
+\ch{Repetition \& Prüfungsthemen}
+	Open Book Prüfung
+	\se{Einstieg}
+		\uli{
+			\li Wann wird Simulation eingesetzt und wann macht sie Sinne? Wenn es nicht gerechnet werden kann, wenn es zu kompliziert ist.
+			\li Gründe ein Simulationsprojekt zu starten
+			\li Grunddefinition von Shenon
+			\li Wodurch zeichnet sich ein System aus? Klar definierte Grenzen, Schnittstellen, Subsysteme
+			\li Unterschied physikalisches/logisches Modell. Physikalisches Modell ist z.B. Windkanal. Wir haben es vorwiegend mit logischen Modellen zu tun.
+			\li Mehrere Experimente, Warum streuen Resultate?
+			\li Ist Simulation eine Analytische oder Experimentelle Methode? experimentell, weil wir ein Modell machen und daran Fragen stellen (Fragen in Form von Experimenten). Die Analyse des Datenmaterials ist jedoch eine analytische Vorgehensweise.
+			\li statische Simulation (Zeit spielt keine Rolle) kommt nicht an Prüfung.
+			\li Kontinuierliche Simulation: Wie kann in einer diskreten Ereignissimulation ein kontinuierliches Verhalten simulieren? Zeit Intervalle, die betrachtet werden hinreichend klein machen.
+			\li Stochastische Systeme: Was ist das?
+			\li Scope of Work / Objectives: Keine Fragen an Prüfung
+			\li Simulationsphasen: Ziel des formalen Modells? Wozu dient Modellverifikation? Wozu Modellvalidierung?
+				\uli{
+					\li Bild Simulations Process II kennen. 
+					\li Was ist isolierende Simulation/Abstraktion? 
+					\li Was ist besser, hypothetisches oder empitrisches Datenmaterial? empirisches, weil die Realität dahinter steckt. 
+					\li Was ist generalisierende Abstraktion? Abbilden des Datenmaterials auf eine Verteilfunktion, um beliebig viele Experimente machen zu können.
+					\li Wzu können die Simulationsresultate genutzt werden? Verifikation des Modells.
+				}
+		}
+		
+	
+	\se{Event driven Architecture}
+		\uli{
+			\li Ereignisse, Erkennung \& Verarbeitung
+			\li Kommunikationsmuster syn/asyn
+			\li CEP und ESP nicht Prüfungsrelevant
+			\li Simulations- und Modelluhr, Reale Uhr: Was ist das Dualitätsprinzip? Was ist Simulationsuhr und was reale Zeit? Wie können Überholvorgänge entstehen?
+			\li Kann die parallele Simulation in jedem Fall auf einer Multicoremachine Rechenzeit gewinnen? Nein, wenn Synchronisation nötig ist. Was sind optimistische und pessimistische Ansatz? optimistisch: einfach rechnen und anschliessend Kollision ermitteln. pessimistisch: Simulation wird immer synchronisiert.
+			\li 
+		}
+
+
+	\se{Warteschlangen}
+		\uli{
+			\li Was für eine Verteilungsfunktion steckt hinter Markoffprozess? Negative Exponentialveteilung (einziger Prozess, nicht der Erinnerungslos ist)
+			\li Eine Maschine mit rückgekoppelten Warteschlangensystem. Mü ist gegeben, Sigma aus Erfahrung nehmen. Mittlere Aufenthaltsdauer im System berechnen.
+			\li Gegeben ist Kette mit Prozessen aus Queues und Sees. Wo wird Warteschlange (Sammlung von Events erwartet)?
+			\li Utilisation berechnen
+			\li Durchsatz und Latenz von Systemen berechnen. Begründen.
+			\li Mittlere Wartezeit berechnen
+			\li Verlustwahrscheinlichkeit berechnen
+			\li Wenn Utilisation hoch, ist auch Wartewahrscheinlichkeit hoch. Wenn Utilisation=1, Wartewahrscheinlichkeit=1. Wenn Ut=0, Wws=0. Uti und WWs sind die gleiche Grösse.
+			\li Formeln mitnehmen.
+		}
+
+
+	\se{SYSML}
+		\uli{
+			\li Keine spezifischen Fragen zu SYSML
+			\li Ganz simples Word-Model, dass mit SYSML umgesetz werden muss.
+		}
+	
+	
+	\se{Ursache/Wirkungsdiagramme nach Bossel}
+		\uli{
+			\li Ganz simples Word Model, zudem ein Ursache/Wirkungsmodel gezeichnet werden muss
+			\li Ermitteln, ob ein System stabil ist oder nicht. \ra\ Wenn der Wert grösser 1 ist.
+		}
+	
+	
+	\se{Inputdatenanalyse}
+		\uli{
+			\li diskrete Wahrscheinlichkeit, kontinuierliche Verteilungsfunktion. Bei welchem kann ich einen konkreten Wert unmittelbar ablesen? bei diskreter
+			\li Was sagt mir die Dichtefunktion oder eine Verteilungsfunktion? Durch diese Verteilungsfunktion wird der Zeitabstand bestimmt, wann ein Ereignis ankommt. Mittelwert einzeichnen, Verteilungsfunktion einzeichnen können.
+			\li Taschenrechner mitnehmen.
+			\li Beispiel um einfache Mittelwerte oder Varianzberechnung.
+			\li Poissonverteilung kommt nicht.
+			\li Normalverteilung: Einfache Aufgabe mit Tabelle kommt. Was passiert, wenn sich mü oder sigma verschieben?
+			\li Zufallszahlen: Keine Berechnungsaufgabe aber Verständnisfrage. Wie macht man sie? Mit inverser Funktion.
+			\li Was ist eine Zufallsvariable? Eine Abbildung auf eine Variable mit zufälligem Wert.
+		}
+		
+		
+	\se{Output Datenanalyse}
+		\uli{
+			\li Was sind die fünf verschiednen Arten von Stichproben?
+			\li Aufgabe wie Beispiele zu den beiden Sätzen kommt eine Aufgabe. (Stichprobenberechnung) Prüfungsfrage wird nur mit Standardnormalverteilung sein.
+			\li Aufgabe zu Anteilswert/Wahrscheinlichkeit kommt nicht.
+			\li Aufgabe zu Varianz könnte kommen: Schätzen der Varianz (n-1 nehmen).
+			\li Intervallschätzung.
+			\li Einfache Hypothese testen können. (Schliessen auf Grundgesammtheit)
+		}	
+		
+	\exam{
+		\uli{
+			\li Eine Stunde. 
+			\li Ein Paar allgemeine Fragen. 
+			\li Eine Einfache Wahrscheinlichkeitsaufgabe.
+			\li Vertrauenintervall
+			\li Einfaches Bosseldiagramm \ra\ stabilität überprüfen
+			\li Einfacher Hypothesentest
+		}
+	}
+
+
 \end{document}
