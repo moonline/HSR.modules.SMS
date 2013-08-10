@@ -111,6 +111,139 @@ Ein reales System wird als abstraktes mathematisches Modell formuliert. Die Simu
 * Das Resultat der Simulation wird mit der Realität verglichen und anhand der Ergebnisse werden die Beschreibung und damit auch das Modell angepasst.
 
 
+Event Driven Architecture
+=========================
+
+16
+--
+* Sind unabhängig
+* Tauschen Nachrichten ausgelastetes
+* Reagieren auf Ereignisse
+* Aktivitäten werden durch Ereignisse ausgelöst
+
+17
+--
+::
+
+	Ereignis = Type + Eigenschaften
+
+18
+--
+* Ein Ereignis (z.B. Senser meldet 30°) wird von einem Gerät oder andern Prozess ausgelöst
+* Der betreffende Prozess empfängt das Ereignis und verarbeitet es (z.B. berechnen, ob die Temperatur über der Soll Grenze liegt)
+* Der Prozess reagiert auf das Ereignis, indem er eine Aktion auslöst (z.B. die Klimaanlage einschaltet)
+
+19
+--
+Ereignisquelle
+	* Erzeugt Ereignisse
+
+Ereignisobjekt
+	* Weis selbst nicht, wohin es soll
+
+Ereignissenke
+	* Empfängt Ereignisse
+	* Kann auch gleichzeitig Quelle sein
+
+20
+--
+synchron
+	* Sender und Empfänger sind blockiert, bis Nachricht überliefert wurde
+	* Nachricht wird sofort übertragen
+
+asynchron
+	* Sender und Emfänger arbeiten, während im Hintergrund die Nachricht in einer Queue landet -> blockiert nicht
+	* Ereignis getriebene Architektur ist immer asynchron
+	* Lässt sich zu synchroner Kommunikation umbauen
+
+21
+--
+::
+
+	Observer Observer Observer
+	  |  ^     |  ^     |  ^
+	  |  !     |  !     |  !
+	  v  !     v  !     v  !
+	+------------------------+
+	|                        | Public / Subscribe Middleware
+	+------------------------+
+	           ^
+	           !
+	        Observable
+	
+	| subscribe
+
+	! notify
+
+
+22
+--
+CEP
+	* Events werden inklusive Abhängigkeiten und Seiteneffekts verarbeitet
+	* Gleichzeitige, dynamische Eventverarbeitung
+ESP
+	* Verabeitung kontinuierlicher Ereignisströme
+	* In einem Ereignisstrom werden Muster erkannt, um daraus Erkenntnisse ableiten zu können
+
+23
+--
+Die Daten von verschienen Sensoren laufen in der Ereignisverarbeitung zusammen und werden durch mehrere Analyseprozesse analysiert. Daraus resultierende Ereignisse lösen wiederum Prozesse aus, die auch wieder einen Einfluss auf die Eingabeereignisse haben.
+
+24
+--
+* Schwierig Testbar
+* Lokalisierung von Fehlern aufgrund der hohen Freiheitsgrade und Komplexität aufwändig
+* Redundanzen und Inkonsistenzen
+* Nachverfolgung des Ereignisflusses schwierig
+
+25
+--
+Reale Uhr
+	Physikalische Zeit, Zeiteinheiten die verstreichen
+Modelluhr
+	* Zeit, die im Modell verstreicht. Rechnet die Simulation eine Ereignisverarbeitung aus, im Modell passiert jedoch nichts, so bleibt die Zeit stehen.
+	* Die Modellzeit kann beschleunigt oder verlangsamt werden, um in kurzer Zeit viele Vorgänge durchzusimulieren oder um eine Simulation ganz genau anzusehen
+	* Läuft nicht kontinuierlich sondern springt von Ereignis zu Ereignis
+
+26
+--
+* Parallele Ereignisse werden sequentiell abgearbeitet. Die Modelluhr läuft in dieser Zeit jedoch nicht, sodass die Ereignisse in der Simulation parallel stattfinden.
+* Parallele unabhängige Prozesse können sich gegenseitig beeinflussen -> es bracht eine zentrale Kontrollinstanz oder ein Konflikterkennungsverfahren mit Backtracking
+
+27
+--
+
+28
+--
+Wenn das Interesse vor allem an den Zuständen und den Zustandsänderungen und nicht bei den Zustandsübergängen liegt.
+
+29
+--
+Rechenzeit
+	* Zeit, die für die Berechnung eines oder mehreren Ereignissen gebraucht wird
+	* Reale Zeit, die verbraucht wird
+
+Realer Zeit
+	* Läuft Kontinuierlich, unumkehrbar
+
+Modellzeit
+	* Läuft Sprunghaft
+	* Von Event zu Event
+	* Läuft während Berechnungen nicht
+
+Simulationszeit
+	* Zeit, die in der Simulation vergeht
+	* Parallelität bezieht sich immer auf die Simulationsuhr und nicht auf die Rechenzeit
+30
+--
+Optimistisches Verfahren
+	* Annahme: Wenig Beeinflussung
+	* Überwachung, Backtracking falls gegenseitige Beeinflussung stattgefunden
+
+Pessimistisches Verfahren
+	* Kontrollinstanz, die kontinuierlich die gegenseitige Beeinflussung von Prozessen überwacht
+
+
 
 
 
