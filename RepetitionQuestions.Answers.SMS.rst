@@ -244,6 +244,115 @@ Pessimistisches Verfahren
 	* Kontrollinstanz, die kontinuierlich die gegenseitige Beeinflussung von Prozessen überwacht
 
 
+Warteschlangen
+==============
+
+31
+--
+* M
+* M
+* n: Anzahl parallele Abarbeitungsprozesse
+
+**Besispiele**
+*2 M/M/1: Twincenter mit zwei einzelnen Prozessen, die jeweils eine eigene Warteschlange besitzen
+* M/M/2: Dual Server mit zwei einzelnen Prozessen, die eine gemeinsame Warteschlange besitzen.
+
+32
+--
+* Ankommende Tokens werden in die Warteschlange eingereiht.
+* Nach dem Fifo Prinzip werden Tokens aus der Queue entnommen und durch den Prozess abgearbeitet.
+* Mittlere Aufenthaltszeit:
+	::
+
+		Mittlere Wartezeit + Mittlere Servicezeit:
+		R = W + S
+		Servicezeit: Total busy Time B/# abgefertigte Tokens C
+		R = W + B/C
+		Wartezeit: Aufenthaltszeit * Servicezeit * Ankunftsrate
+		R = S + l*S*R
+		R = S/(1-l*S)
+
+
+33
+--
+Das Little's Gesetz besagt, dass die ein System stabil ist, wenn die Ankunftsrate der Durchsatzrate entspricht. Es gehen somit keine Tokens verloren oder kommen neue hinzu.
+
+34
+--
+Die Residenztime wächst ins unendliche. U = l*S, somit geht bei der Gleichung R = S/(1-l*S) der Ausdruck unter dem Bruchstrich mit der Annäherung an 100% gegen 0, was zu einer unendlich grossen Residenztime führt:
+
+::
+
+	^ Residenztime
+	|                 °
+	|                °
+	|            .-°
+	|         .-°
+	|   .--°°         100%
+	+------------------+----> Utilisation
+
+
+35
+--
+Zwei parallele Warteschlangensysteme mit jeweils eigener Warteschlange arbeiten Tokens ab
+
+::
+
+	R = S/(1-XS/2), weil sich die Tokens auf zwei Systeme verteilen
+
+
+36
+--
+Zwei parallele Prozesse erhalten Tokens aus einer gemeinsamen Warteschlange.
+
+::
+
+	R = S / (1-p^2), weil die Residenztime vor allem von der Wartewahrscheinlichkeit p abhängigt.
+
+
+37
+--
+	^ Residenztime
+	|                 °
+	|                °°
+	|            .-° °
+	|         .-°   °
+	|   .--°° ..-°   100%
+	+------------------+----> Utilisation
+	
+	Utilization = BusyTime / TotalTime
+
+
+Die untere Kurve stellt das TwinCenter dar, weil das TwinCenter durch die einzelnen Warteschlangen eine tiefer Auslastung besitzt. Es können Tokens am Warten sein, obwohl der eine Prozess frei wäre, weil die Tokens sich in die Warteschlange des andern Prozesses eingereiht haben.
+
+38
+--
+Tokens durchlaufen mit einer bestimmten Wahrscheinlichkeit das System am Ende nochmal.
+
+::
+
+	D = ServiceTime S * Prozessdurchsatz V = S*1/(1-p)
+	R = D/(1-l*D)
+
+
+Die Mittlere Aufenthaltszeit im System ist somit abhängig von der Effektiven Anzahl Tokens, die durch den Prozess laufen, und nicht der Anzahl Tokens, die in das System eintreten.
+
+39
+--
+In einem Closed Queueing Center gibt es eine feste Anzahl Tokens.
+
+::
+
+	R = N/X(N) - Z
+	
+	X(N): Durchsatz von N Tokens
+	Z: Denkzeit, die die Tokens im Tokenspeicher verbringen
+
+
+
+
+
+
 
 
 
