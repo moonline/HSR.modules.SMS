@@ -349,6 +349,115 @@ In einem Closed Queueing Center gibt es eine feste Anzahl Tokens.
 	Z: Denkzeit, die die Tokens im Tokenspeicher verbringen
 
 
+Input Datenanalyse
+==================
+
+40
+--
+Zufallsvariable
+	Abbildungsfunktion, die den Elementen einer Ergebnismenge reelle Zahlen zuordnet.
+Verteilungsdichtefunktion
+	Wahrscheinlichkeit des Auftretens von Zufallswerten
+
+41
+--
+diskrete Verteilfunktion
+	gestuft, kennt nur zu bestimmten Werten eine Auftrittswahrscheinlichkeit. Die Summe aller (rechteckiger) Balken ist 1.
+kontinuierliche Verteilfunktion
+	Gaus Glockenkurve, Fläche 1.
+
+42
+--
+Verteilungsfunktion
+	Zeigt die Verteilung von Werten
+Summenfunktion
+	Ist die Aufsummierung der Verteilungsfunktion -> steigt daher zwangsmässig von links nach rechts an.
+
+43
+--
+Verteilungsfunktion
+	Zeigt die Verteilung der Werte auf dem Zahlenstrahl
+Dichtefunktion
+	Zeigt die Häufung (gleicher) Werte auf dem Zahlenstrahl
+
+44
+--
+Erwartungswert
+	Wird als Mittelwert der Experimentresultate erwartet
+Standardabweichung
+	Range, in dem sich ein bestimmter Teil der Ergebnisse befindet.
+Varianz
+	Spanne, in der die Ergebnisse schwanken
+
+45
+--
+* Ereignisse werden zu zufällgen Zeiten erzeugt und vernichtet
+* Resourcen, Mengen schwanken
+* Bearbeitungszeiten schwanken zufällig
+* Entscheidungen im Eventfluss sind zufällig
+
+46
+--
+
+47
+--
+
+48
+--
+Siehe 40.
+
+49
+--
+diskret
+	Würfel
+stetig
+	Temperatur
+
+50
+--
+Siehe 43.
+
+51
+--
+Eingabewert, von dem der Zufallszahlen Generator ausgeht. Gleiche Seeds erzeugen gleiche Serien an Zufallszahlen. Dadurch werden Eperimente wiederholbar und nachvollziehbar.
+
+52
+--
+Die Sequenzlänge bezeichnet den Range, indem Zufallszahlen erzeugt werden. Für die Simulation muss die Sequenzlänge so gewählt werden, dass der Zufallszahlengenerator Zufallszahlen im benötigten Bereich generiert. Für einen Würfel z.B. 1-6, für Wahrscheinlichkeiten 0-1, Für eine Fahrzeugplatzbesetzung 1-5.
+
+53
+--
+Über eine Umkehrfunktion.
+
+54
+--
+Weil es je nach Anwendunggebiet eine andere Häufung braucht. z.B. Würfel: Alle Zahlen müssen gleich häufig vorkommen. Bei 2 Würfeln: 6 und 8 kommen am häufigsten vor.
+
+55
+--
+Sie ist absolut entscheidend. Sollen Würfe mit 2 Würfeln simuliert werden und es wird eine Exponentialverteilung verwendet, so sind die Ergebnisse wertlos.
+
+57
+--
+Sie müssen wiederholbar sein, damit die Simulation wiederholt und nachvollzogen werden kann. Es dürfen somit keine echten Zufallszahlen sein, sondern Zahlen, die einer Funktion folgen aber verteilt sind wie Zufallszahlen.
+
+58
+--
+Weil bei jedem Simulationsdurchgang andere Resultate herauskommen würden und das Ergebnis nicht nachvollzogen werden kann.
+
+59
+--
+Zufallszahlengenerator, Random Number Generator.
+
+60
+--
+
+61
+--
+
+
+
+
 
 
 
