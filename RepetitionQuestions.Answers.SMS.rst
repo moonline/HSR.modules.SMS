@@ -456,11 +456,67 @@ Zufallszahlengenerator, Random Number Generator.
 --
 
 
+Output Datenanalyse
+===================
+
+62
+--
+* Einfache Zufallsstichprobe
+* Systematische Stichprobe
+* Mehrstufige Stichprobe
+
+63
+--
+isolierende Abstraktion
+	Den verschiedenen Eigenschaften der Stichprobenverfahren wird aufgrund der Input Daten Rechnung getragen
+generalisierende Abstraktion
+	Es wird eine allgemeine Verteilfunktion gesucht, um die Anzahl Experimente und die Varianz zu erhähen.
+
+64
+--
+Satz1
+	Für den Mittelwert der Stichprobe wird der gleiche Mittelwert wie für die Gesammtmenge erwartet. Er streut jedoch um den Gesammtmengenmittelwert. Je grösser die Stichprobe n, umso kleiner die Streuung.
+Satz2
+	Ist die Grundmenge normalverteilt, so ist dies auch die Stichprobenmenge.
+
+65
+--
+Um von einer Stichprobe auf die Gesammtmenge schliessen zu können und Fehler auszumerzen.
+
+66
+--
+Punktschätzung
+	Die Parameterschätzung für den Mittelwert und die Varianz werden untersucht.
+Intervallschätzung
+	* Schätzung von Vertrauensintervallen für die Parameter der Punktschätzung.
+	* Abschätzung des Risikos einer Fehlschätzung -> Zuverlässigkeit
+
+67
+--
+Dadurch kann anhand der Verteilfunktion beliebig viel Datenmaterial für die Simulationen erzeugt werden. Wird direkt das empirische Material verwendet, so kann damit nur eine Simulation gemacht werden.
+
+68
+--
+a)
+..
+::
+
+	X-z*s/sqrt(n), X+z*s/sqrt(n)
+
+	X: 2500.- im Mittel
+	z:1.96 (Tabelle->0.95 in Zelle suchen, Zeilennummer und Spalte zu Zahl zusammenfügen (1.9, 6 -> 1.96))
+	s: 400 EUR Standardabweichung
+	n: 250 Stichproben
+
+	Vertrauensintervall für 95% der Werte:
+	2500 - 1.96*400/sqrt(250), 2500 - 1.96*400/sqrt(250) = 2450, 2550
 
 
+b)
+..
+::
 
-
-
+	
 
 
 
