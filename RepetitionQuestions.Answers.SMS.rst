@@ -491,13 +491,15 @@ Intervallschätzung
 	* Schätzung von Vertrauensintervallen für die Parameter der Punktschätzung.
 	* Abschätzung des Risikos einer Fehlschätzung -> Zuverlässigkeit
 
-67 Grund für Erzeugung von Verteilfunktionen aus analytischem Datenmaterial
----------------------------------------------------------------------------
+67 Analytisches Datenmaterial -> Verteilfunktion
+------------------------------------------------
 Dadurch kann anhand der Verteilfunktion beliebig viel Datenmaterial für die Simulationen erzeugt werden. Wird direkt das empirische Material verwendet, so kann damit nur eine Simulation gemacht werden.
 
-68 Stichprobe: 250 Haushalte, 2500.- im Mittel, Standardabweichung 400.-
-------------------------------------------------------------------------
-a 95% Vertrauensintervall
+68 Stichprobe & Vertrauensintervall
+-----------------------------------
+250 Haushalte, 2500.- im Mittel, Standardabweichung 400.-
+
+a) 95% Vertrauensintervall
 .........................
 ::
 
@@ -512,7 +514,7 @@ a 95% Vertrauensintervall
 	2500 - 1.96*400/sqrt(250), 2500 - 1.96*400/sqrt(250) = 2450, 2550
 
 
-b Vertrauensintervall für 2Mio HH
+b) Vertrauensintervall für 2Mio HH
 .................................
 ::
 
@@ -543,8 +545,8 @@ Unabhängigkeitstest
 3) Bestimmen der Testgösse und des Annahme- und Ablehnungsbereichs (Testgrösse kann der Stichprobenmittelwert sein)
 4) Berechnen der Testgrösse mit den Daten der Stichprobe und Testentscheidung
 
-72 Grund für Erzeugung von Verteilfunktionen aus analytischem Datenmaterial
----------------------------------------------------------------------------
+72 Analytisches Datenmaterial -> Verteilfunktion
+------------------------------------------------
 Siehe 67.
 
 
