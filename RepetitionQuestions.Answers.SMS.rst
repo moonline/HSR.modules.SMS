@@ -459,46 +459,46 @@ Zufallszahlengenerator, Random Number Generator.
 Output Datenanalyse
 ===================
 
-62
---
+62 Stichprobenverfahren
+-----------------------
 * Einfache Zufallsstichprobe
 * Systematische Stichprobe
 * Mehrstufige Stichprobe
 
-63
---
+63 Generalisierende und Isolierende Abstraktion
+-----------------------------------------------
 isolierende Abstraktion
 	Den verschiedenen Eigenschaften der Stichprobenverfahren wird aufgrund der Input Daten Rechnung getragen
 generalisierende Abstraktion
 	Es wird eine allgemeine Verteilfunktion gesucht, um die Anzahl Experimente und die Varianz zu erhähen.
 
-64
---
+64 Sätze der Stichprobenerhebung
+--------------------------------
 Satz1
 	Für den Mittelwert der Stichprobe wird der gleiche Mittelwert wie für die Gesammtmenge erwartet. Er streut jedoch um den Gesammtmengenmittelwert. Je grösser die Stichprobe n, umso kleiner die Streuung.
 Satz2
 	Ist die Grundmenge normalverteilt, so ist dies auch die Stichprobenmenge.
 
-65
---
+65 Zweck von Schätzverfahren bei Stichproben
+--------------------------------------------
 Um von einer Stichprobe auf die Gesammtmenge schliessen zu können und Fehler auszumerzen.
 
-66
---
+66 Punktschätzung & Intervallschätzung
+--------------------------------------
 Punktschätzung
 	Die Parameterschätzung für den Mittelwert und die Varianz werden untersucht.
 Intervallschätzung
 	* Schätzung von Vertrauensintervallen für die Parameter der Punktschätzung.
 	* Abschätzung des Risikos einer Fehlschätzung -> Zuverlässigkeit
 
-67
---
+67 Grund für Erzeugung von Verteilfunktionen aus analytischem Datenmaterial
+---------------------------------------------------------------------------
 Dadurch kann anhand der Verteilfunktion beliebig viel Datenmaterial für die Simulationen erzeugt werden. Wird direkt das empirische Material verwendet, so kann damit nur eine Simulation gemacht werden.
 
-68
---
-a)
-..
+68 Stichprobe: 250 Haushalte, 2500.- im Mittel, Standardabweichung 400.-
+------------------------------------------------------------------------
+a 95% Vertrauensintervall
+.........................
 ::
 
 	X-z*s/sqrt(n), X+z*s/sqrt(n)
@@ -512,11 +512,40 @@ a)
 	2500 - 1.96*400/sqrt(250), 2500 - 1.96*400/sqrt(250) = 2450, 2550
 
 
-b)
-..
+b Vertrauensintervall für 2Mio HH
+.................................
 ::
 
-	
+
+
+Testverfahren
+=============
+
+69 Tests
+--------
+Parametertest
+	Überprüfen der Hypothese über die Parameter einer Grundgesammtheit
+Verteilungs-/Anpassungstest
+	Überprüfen, ob eine Zufallsvariable der Verteilfunktion folgt
+Unabhängigkeitstest
+	Überprüfen, ob zwischen Zufallsvariablen Zusammenhänge bestehenden
+
+70 Zweck von Testverfahren
+--------------------------
+* Test von Hypothese und Signifikanz
+* Aussagen gewinnen über Wahrscheinlichkeit eines Fehlers
+* Um Vertrauensintervalle konstruieren zu können
+
+71 Vorgehen Hypothesentest
+--------------------------
+1) Festlegen der Grundgesamtheit, Nullhypothese und Alternativhypothese H1
+2) Festlegen der Signifikanzzahl
+3) Bestimmen der Testgösse und des Annahme- und Ablehnungsbereichs (Testgrösse kann der Stichprobenmittelwert sein)
+4) Berechnen der Testgrösse mit den Daten der Stichprobe und Testentscheidung
+
+72 Grund für Erzeugung von Verteilfunktionen aus analytischem Datenmaterial
+---------------------------------------------------------------------------
+Siehe 67.
 
 
 
