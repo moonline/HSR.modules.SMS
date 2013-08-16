@@ -116,5 +116,37 @@ Wie werden Ereignisse erkannt & Verarbeitet?
 --------------------------------------------
 Die Ereignisse der verschieden Quellen werden analysiert, aggregiert, aufgesplittet, korelliert, teilweise verworfen und kategorisiert (geclustert).
 
+Simulations- und Modelluhr
+--------------------------
+Simulationsuhr
+	* Zeit, die in der Simulation vergeht.
+	* Vergeht sprunghaft (disrekt)
+	* Während die Simulation berechnet wird, vergeht keine Simulationszeit
+
+Reale Uhr
+	* Läuft kontinuierlich mit immer gleichen Zeitabständen
+
 Was ist das Dualitätsprinzip bei der Simulations- und Modelluhr?
-----------------------------------------------------------------
+................................................................
+* Simulationsuhr und reale Uhr sind unabhängig.
+* Das Weiterstellen (verbrauchen) der Simulationszeit benötigt quasi keine Rechenzeit
+* Das Abarbeiten der Ereignisroutinen benötigt Rechenzeit aber keine Simulationszeit
+
+Überholvorgänge
+...............
+Parallel ablaufende Vorgänge werden zwar sequentiell verarbeitet, jedoch im Rahmend der Modelluhr parallel platziert. Sind sie unabhängig (greifen auf keine gemeinsamen Ressourcen zu), so ist ein Überholen des früher gestarteten Vorgangs durch den später gestarteten möglich.
+
+Kann eine parallele Simulation jederzeit auf einer Multicore Machine ausgeführt werden?
+.......................................................................................
+Nein, wenn die Prozesse auf gemeinsame Ressourcen zugreifen nicht.
+
+Optimistischer Ansatz
+	Die Simulation rechnet drauflos und prüft anschliessend, ob sich die Prozesse gegenseitig beeinflusst hätten (Kollision) -> wenn ja, dann Backtracking
+Pessimistischer Ansatz
+	Die Simulation prüft jederzeit, ob und wie sich die beiden Prozesse gegenseitig beeinflussen. (synchronisation)
+
+
+
+
+
+
