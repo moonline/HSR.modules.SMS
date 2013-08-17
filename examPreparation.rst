@@ -147,6 +147,89 @@ Pessimistischer Ansatz
 
 
 
+Warteschlangen
+==============
+
+Welcher Verteilfunktion folgt der Markoffprozess?
+-------------------------------------------------
+Eine negative Exponentialfunktion, weil Markoff Erinnerungsbehaftet ist.
+
+Rückgekoppeltes Warteschlangensystem
+------------------------------------
+Annahme: Simple Queue gemeint
+::
+
+	Geg:  u = 15s
+	Ges:  R
+	Annahme:  sigma = 10s
+	Annahme: sigma = mittlere Servicezeit D
+
+	u = 1/lamda
+	lamda = 1/u = 1/15/s
+	R = S/(1-l*S) = 10s/(1-1/15*10) = 10s/3.333 = 3.33s
+
+Verlistwahrscheinlichkeit
+-------------------------
+::
+
+	v = 1-X/lamda
+
+Utilisation & Wartewahrscheinlichkeit
+-------------------------------------
+Utilisation = Wartewahrscheinlichkeit
 
 
+Inputdatenanalyse
+=================
+
+Diskrete Wahrscheinlichkeit & kontinuierliche Verteilfunktionen
+---------------------------------------------------------------
+Bei diskreten Wahrscheinlichkeiten kann der Wert direkt abgelesen werden. Bei Verteilfunktionen muss er abgelesen werden.
+
+Dichtefunktion
+--------------
+Wahrscheinlichkeit des Auftretens von Zufallswerten (Zeitabstand, in denen Ereignisse ankommen).
+
+Verteilfunktion
+---------------
+Bildet ab, wie die auftretenden Zufallswerte über den Zahlenstrahl verteilt sind.
+
+Normalverteilung
+----------------
+* Gaus
+* Varianz: sigma = Abstand vom Maximalwert
+	.. image:: img/normalverteilung-sigma.gif
+* Erwartungswert/median: u = Position des Maximalwertes
+	.. image:: img/normalverteilung-u.png
+* Veränderungen der Parameter:
+	* u wird grösser/kleiner: Kurve wandert horizontal
+	* sigma wird grösser: Kurve wird breiter und weniger hoch
+
+Wie werden Zufallszahlen erzeugt?
+---------------------------------
+Zufallszahlen werden durch eine inverse Funktion erzeugt. -> Die Inversionsmethode ist ein Simulationsverfahren, um aus gleichverteilten Zufallszahlen andere Wahrscheinlichkeitsverteilungen zu erzeugen.
+
+
+Output Datenanalyse
+===================
+
+Stichprobenarten
+----------------
+Zufallsauswahl
+    * Einfache Zufallsstichprobe
+    * Systematische Stichprobe
+    * Mehrstufige Stichprobe
+
+Bewusste Auswahn
+	* Systematische Stichprobenziehung -> Die Auswahl erfolgt anhand von Listen und festgelegten Regeln. 
+
+Willkürliche Auswahl
+	* Willkürliche Stichproben -> Die Auswahl liegt im Ermessen des Interviewers – oder auch der Probanden (Selbstselektion).
+
+Varianz
+-------
+
+
+Grundgesammtheit (Hypothesentest)
+---------------------------------
 
