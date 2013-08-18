@@ -312,6 +312,8 @@ Zwei parallele Prozesse erhalten Tokens aus einer gemeinsamen Warteschlange.
 
 37
 --
+::
+
 	^ Residenztime
 	|                 °
 	|                °°
@@ -518,6 +520,9 @@ b) Vertrauensintervall für 2Mio HH
 .................................
 ::
 
+	n = 2'000'000
+
+	2500 - 1.96*400/sqrt(2'000'000), 2500 - 1.96*400/sqrt(2'000'000) = 2499.4, 2500.6
 
 
 Testverfahren
