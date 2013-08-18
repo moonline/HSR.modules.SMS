@@ -234,6 +234,7 @@ Modellzeit
 Simulationszeit
 	* Zeit, die in der Simulation vergeht
 	* Parallelität bezieht sich immer auf die Simulationsuhr und nicht auf die Rechenzeit
+
 30
 --
 Optimistisches Verfahren
@@ -254,7 +255,7 @@ Warteschlangen
 * n: Anzahl parallele Abarbeitungsprozesse
 
 **Besispiele**
-*2 M/M/1: Twincenter mit zwei einzelnen Prozessen, die jeweils eine eigene Warteschlange besitzen
+* 2 M/M/1: Twincenter mit zwei einzelnen Prozessen, die jeweils eine eigene Warteschlange besitzen
 * M/M/2: Dual Server mit zwei einzelnen Prozessen, die eine gemeinsame Warteschlange besitzen.
 
 32
@@ -502,7 +503,7 @@ Dadurch kann anhand der Verteilfunktion beliebig viel Datenmaterial für die Sim
 250 Haushalte, 2500.- im Mittel, Standardabweichung 400.-
 
 a) 95% Vertrauensintervall
-.........................
+..........................
 ::
 
 	X-z*s/sqrt(n), X+z*s/sqrt(n)
@@ -517,7 +518,7 @@ a) 95% Vertrauensintervall
 
 
 b) Vertrauensintervall für 2Mio HH
-.................................
+..................................
 ::
 
 	n = 2'000'000
